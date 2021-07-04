@@ -66,7 +66,9 @@ BottomNavigation.defaultProps = {
 	showLabel: 'always',
 };
 
-interface IBottomNavigationItemProps extends HTMLChakraProps<'button'> {}
+interface IBottomNavigationItemProps extends Omit<HTMLChakraProps<'button'>, 'value'> {
+	value: string | number;
+}
 
 export const BottomNavigationItem = forwardRef<IBottomNavigationItemProps, 'button'>(({ value, ...props }, ref) => {
 	const isDisabled = props.disabled || false;
@@ -79,11 +81,13 @@ export const BottomNavigationItem = forwardRef<IBottomNavigationItemProps, 'butt
 		disabled: isDisabled,
 	});
 
-	const isSelected = (value || index) === context.value;
+	const itemValue = value || index;
+
+	const isSelected = itemValue === context.value;
 
 	const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
 		props.onClick?.(e);
-		context.onChange(index);
+		context.onChange(itemValue);
 	};
 
 	const itemStyles: SystemStyleObject = {
