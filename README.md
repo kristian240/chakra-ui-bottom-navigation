@@ -19,13 +19,61 @@ npm install chakra-ui-bottom-navigation
 yarn add chakra-ui-bottom-navigation
 ```
 
-## Usage
-
 > NOTE: this component requries Chakra-UI >= v1.0.0 to work properly. You can follow [instructions for installing Chakara-UI](https://chakra-ui.com/docs/getting-started) or [instructions for migrating to v1](https://chakra-ui.com/docs/migration)
 
-<!-- TODO: add theme section -->
+## Theme
 
-### Basic example
+By default, this component comes with some predefined styles. To utilize this styles add them to theme overrides.
+
+```jsx
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { BottomNavigationStyleConfig as BottomNavigation } from 'chakra-ui-bottom-navigation';
+
+const theme = extendTheme({
+  components: {
+    BottomNavigation,
+  },
+});
+
+export const App = () => {
+  return (
+    <ChakraProvider theme={theme}>
+      <App />
+    </ChakraProvider>
+  );
+};
+```
+
+### WithDefaultTheme
+
+If you want to expand defualt styles of the component, use the `withDefaultStyles` HOC. Component override follows the same structure as all other Chakra-UI components. [Check the guide here.](https://chakra-ui.com/docs/theming/component-style#styling-multipart-components)
+
+```jsx
+import { withDefaultStyles } from 'chakra-ui-bottom-navigation`;
+
+const bottomNavigationOverries = {
+  // ... component's override
+}
+
+const MyBottomNavigation = withDefaultStyles(bottomNavigationOverries);
+
+const theme = extendTheme({
+  components: {
+    BottomNavigation: MyBottomNavigation,
+  },
+});
+```
+
+## Import
+
+Chakra-UI Bottom Navigation exports 4 component:
+
+- `BottomNavigation`: The wrapper that provides context for all children.
+- `BottomNavigationItem`: A single Bottom Navigation element
+- `BottomNavigationIcon`: An icon used to render the item
+- `BottomNavigationLabel`: A label used to label an item
+
+## Usage
 
 ```jsx
 export const BasicExample = () => {
