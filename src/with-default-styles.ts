@@ -1,6 +1,6 @@
 import { mergeThemeOverride } from '@chakra-ui/react';
 
-import { BottomNavigationStyleConfig } from './index';
+import { BottomNavigationStyleConfig } from './theme';
 
 type Dict = Record<string, any>;
 
