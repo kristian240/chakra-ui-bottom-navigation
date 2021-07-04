@@ -16,9 +16,10 @@ const baseStyle = {
 	item: {
 		flex: 1,
 		mx: 4,
+		opacity: 0.4,
 
-		_hidden: {
-			opacity: 0.4,
+		_selected: {
+			opacity: 1,
 		},
 	},
 };
@@ -64,7 +65,7 @@ const variants = {
 
 const defaultProps = {
 	variant: 'float',
-	colorScheme: 'primary',
+	colorScheme: 'blue',
 };
 
 export const BottomNavigationStyleConfig = {

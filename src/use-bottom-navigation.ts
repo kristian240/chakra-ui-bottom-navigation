@@ -9,8 +9,8 @@ export const [
 ] = createDescendantContext<HTMLButtonElement>();
 
 export interface IBottomNavigationContext {
-	value: number;
-	onChange(newValue: number): void;
+	value: string | number;
+	onChange(newValue: string | number): void;
 	showLabel?: 'never' | 'if-active' | 'always';
 }
 
@@ -23,6 +23,7 @@ export const [BottomNavigationProvider, useBottomNavigationContext] = createCont
 export interface IBottomNavigationItemContext {
 	isDisabled?: boolean;
 	isSelected: boolean;
+	value?: string | number;
 }
 
 export const [BottomNavigationItemProvider, useBottomNavigationItemContext] =
