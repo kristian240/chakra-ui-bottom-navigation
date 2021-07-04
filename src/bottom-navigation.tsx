@@ -67,7 +67,7 @@ BottomNavigation.defaultProps = {
 };
 
 interface IBottomNavigationItemProps extends Omit<HTMLChakraProps<'button'>, 'value'> {
-	value: string | number;
+	value?: string | number;
 }
 
 export const BottomNavigationItem = forwardRef<IBottomNavigationItemProps, 'button'>(({ value, ...props }, ref) => {
