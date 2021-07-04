@@ -4,6 +4,9 @@
 	"description": "Bottom navigation component built for chakra",
 	"main": "dist/index.js",
 	"typings": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
 	"homepage": "https://github.com/kristian240/chakra-ui-bottom-navigation",
 	"scripts": {
 		"build": "tsdx build",
