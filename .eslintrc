@@ -1,13 +1,5 @@
 {
-	"parser": "@typescript-eslint/parser",
-	"extends": [
-		"standard",
-		"standard-react",
-		"plugin:prettier/recommended",
-		"prettier/standard",
-		"prettier/react",
-		"plugin:@typescript-eslint/eslint-recommended"
-	],
+	"extends": ["prettier"],
 	"parserOptions": {
 		"ecmaVersion": 2021,
 		"ecmaFeatures": {

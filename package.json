@@ -2,14 +2,17 @@
 	"name": "chakra-ui-bottom-navigation",
 	"version": "1.0.0-pre.1",
 	"description": "Bottom navigation component built for chakra",
-	"main": "src/index.ts",
+	"main": "dist/index.js",
+	"typings": "dist/index.d.ts",
 	"homepage": "https://github.com/kristian240/chakra-ui-bottom-navigation",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"build": "tsdx build",
+		"dev": "tsdx watch",
+		"test": "tsdx test --passWithNoTests"
 	},
 	"peerDependencies": {
-		"@chakra-ui/react": ">= 1.0.0",
-		"react": ">= 16.8.1"
+		"@chakra-ui/react": ">=1.0.0",
+		"react": ">=16.8.1"
 	},
 	"devDependencies": {
 		"@chakra-ui/react": "~1.6.4",
@@ -19,7 +22,6 @@
 		"@types/node": "~16.0.0",
 		"@types/react": "~17.0.13",
 		"@types/react-dom": "~17.0.8",
-		"@typescript-eslint/parser": "~4.28.1",
 		"eslint": "~7.30.0",
 		"eslint-config-prettier": "~8.3.0",
 		"eslint-config-react": "~1.1.7",
@@ -32,6 +34,7 @@
 		"react": "~17.0.2",
 		"react-dom": "~17.0.2",
 		"ts-jest": "~26.5.6",
+		"tsdx": "~0.14.1",
 		"typescript": "~4.3.5"
 	},
 	"keywords": [
