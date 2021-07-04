@@ -2,7 +2,7 @@
 
 Chakra-UI Bottom Navigation is an accessible and reusable component built to work seamlessly with [Chakra-UI](https://chakra-ui.com/).
 
-<!-- TODO create sandbox demo -->
+Check the [demo](https://codesandbox.io/s/chakra-ui-bottom-navigation-example-kp7hk?file=/src/index.tsx)
 
 ## Features
 
