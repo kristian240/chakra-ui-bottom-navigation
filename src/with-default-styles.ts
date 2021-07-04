@@ -4,6 +4,6 @@ import { BottomNavigationStyleConfig } from './index';
 
 type Dict = Record<string, any>;
 
-export const withDefaultStyles = (...overrides: Array<Dict>) => {
-	return mergeThemeOverride(BottomNavigationStyleConfig, ...overrides);
+export const withDefaultStyles = (overrides: Dict): Dict => {
+	return mergeThemeOverride(BottomNavigationStyleConfig, overrides);
 };
