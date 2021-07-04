@@ -64,7 +64,7 @@ const variants = {
 
 const defaultProps = {
 	variant: 'float',
-	colorScheme: 'primary',
+	colorScheme: 'blue',
 };
 
 export const BottomNavigationStyleConfig = {
