@@ -16,6 +16,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - run: npm i
       - run: npm test --ci --coverage --maxWorkers=2
+      - run: npm run build
       - run: |
           npm config set registry https://registry.npmjs.org
           npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
