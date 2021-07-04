@@ -1,6 +1,6 @@
 {
-	"name": "chakra-bottom-navigation",
-	"version": "1.0.0-pre.0",
+	"name": "chakra-ui-bottom-navigation",
+	"version": "1.0.0-pre.1",
 	"description": "Bottom navigation component built for chakra",
 	"main": "src/index.ts",
 	"homepage": "https://github.com/kristian240/chakra-ui-bottom-navigation",
