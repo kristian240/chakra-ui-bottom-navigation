@@ -11,4 +11,5 @@ module.exports = {
 	},
 	preset: 'ts-jest',
 	testMatch: null,
+	resetMocks: false,
 };

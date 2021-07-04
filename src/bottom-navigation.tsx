@@ -88,7 +88,6 @@ export const BottomNavigationItem = forwardRef<IBottomNavigationItemProps, 'butt
 
 		const handleClick = React.useCallback(
 			(e: React.MouseEvent<HTMLButtonElement>) => {
-				console.log({ itemValue });
 				onClick?.(e);
 				context.onChange(itemValue);
 			},
