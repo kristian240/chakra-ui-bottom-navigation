@@ -29,26 +29,26 @@ yarn add chakra-ui-bottom-navigation
 
 ```jsx
 export const BasicExample = () => {
-	const [value, setValue] = useState(0);
+  const [value, setValue] = useState(0);
 
-	return (
-		<BottomNavigation value={value} onChange={setValue}>
-			<BottomNavigationItem>
-				<BottomNavigationIcon as={HomeIcon} />
-				<BottomNavigationLabel>Home</BottomNavigationLabel>
-			</BottomNavigationItem>
+  return (
+    <BottomNavigation value={value} onChange={setValue}>
+      <BottomNavigationItem>
+        <BottomNavigationIcon as={HomeIcon} />
+        <BottomNavigationLabel>Home</BottomNavigationLabel>
+      </BottomNavigationItem>
 
-			<BottomNavigationItem>
-				<BottomNavigationIcon as={SearchIcon} />
-				<BottomNavigationLabel>Search</BottomNavigationLabel>
-			</BottomNavigationItem>
+      <BottomNavigationItem>
+        <BottomNavigationIcon as={SearchIcon} />
+        <BottomNavigationLabel>Search</BottomNavigationLabel>
+      </BottomNavigationItem>
 
-			<BottomNavigationItem>
-				<BottomNavigationIcon as={StarIcon} />
-				<BottomNavigationLabel>Favourites</BottomNavigationLabel>
-			</BottomNavigationItem>
-		</BottomNavigation>
-	);
+      <BottomNavigationItem>
+        <BottomNavigationIcon as={StarIcon} />
+        <BottomNavigationLabel>Favourites</BottomNavigationLabel>
+      </BottomNavigationItem>
+    </BottomNavigation>
+  );
 };
 ```
 
@@ -56,30 +56,30 @@ export const BasicExample = () => {
 
 ```jsx
 export const BasicExample = () => {
-	const router = useRouter();
+  const router = useRouter();
 
-	const handleChange = useCallback((path) => {
-		router.push(path);
-	});
+  const handleChange = useCallback((path) => {
+    router.push(path);
+  });
 
-	return (
-		<BottomNavigation value={router.pathname} onChange={handleChange}>
-			<BottomNavigationItem value="/">
-				<BottomNavigationIcon as={HomeIcon} />
-				<BottomNavigationLabel>Home</BottomNavigationLabel>
-			</BottomNavigationItem>
+  return (
+    <BottomNavigation value={router.pathname} onChange={handleChange}>
+      <BottomNavigationItem value="/">
+        <BottomNavigationIcon as={HomeIcon} />
+        <BottomNavigationLabel>Home</BottomNavigationLabel>
+      </BottomNavigationItem>
 
-			<BottomNavigationItem value="/search">
-				<BottomNavigationIcon as={SearchIcon} />
-				<BottomNavigationLabel>Search</BottomNavigationLabel>
-			</BottomNavigationItem>
+      <BottomNavigationItem value="/search">
+        <BottomNavigationIcon as={SearchIcon} />
+        <BottomNavigationLabel>Search</BottomNavigationLabel>
+      </BottomNavigationItem>
 
-			<BottomNavigationItem value="/favorites">
-				<BottomNavigationIcon as={StarIcon} />
-				<BottomNavigationLabel>Favorites</BottomNavigationLabel>
-			</BottomNavigationItem>
-		</BottomNavigation>
-	);
+      <BottomNavigationItem value="/favorites">
+        <BottomNavigationIcon as={StarIcon} />
+        <BottomNavigationLabel>Favorites</BottomNavigationLabel>
+      </BottomNavigationItem>
+    </BottomNavigation>
+  );
 };
 ```
 

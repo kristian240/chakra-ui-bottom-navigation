@@ -17,8 +17,12 @@
 			}
 		},
 		{
-			"files": [".prettierrc", ".eslintrc"],
+			"files": ".prettierrc",
 			"options": { "parser": "json" }
+		},
+		{
+			"files": "*.md",
+			"options": { "useTabs": false }
 		}
 	]
 }
