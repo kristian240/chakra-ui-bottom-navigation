@@ -12,7 +12,7 @@ import {
 	useMultiStyleConfig,
 	useStyles,
 } from '@chakra-ui/react';
-import { dataAttr, cx, __DEV__ } from '@chakra-ui/utils';
+import { ariaAttr, dataAttr, cx, __DEV__ } from '@chakra-ui/utils';
 import { mergeRefs } from '@chakra-ui/react-utils';
 import React from 'react';
 
@@ -70,48 +70,52 @@ interface IBottomNavigationItemProps extends Omit<HTMLChakraProps<'button'>, 'va
 	value?: string | number;
 }
 
-export const BottomNavigationItem = forwardRef<IBottomNavigationItemProps, 'button'>(({ value, ...props }, ref) => {
-	const isDisabled = props.disabled || false;
+export const BottomNavigationItem = forwardRef<IBottomNavigationItemProps, 'button'>(
+	({ value, onClick, ...props }, ref) => {
+		const isDisabled = props.disabled || false;
 
-	const styles = useStyles();
+		const styles = useStyles();
 
-	const context = useBottomNavigationContext();
+		const context = useBottomNavigationContext();
 
-	const { index, register } = useBottomNavigationDescendant({
-		disabled: isDisabled,
-	});
+		const { index, register } = useBottomNavigationDescendant({
+			disabled: isDisabled,
+		});
 
-	const itemValue = value || index;
+		const itemValue = value || index;
 
-	const isSelected = itemValue === context.value;
+		const isSelected = itemValue === context.value;
 
-	const handleClick = React.useCallback(
-		(e: React.MouseEvent<HTMLButtonElement>) => {
-			props.onClick?.(e);
-			context.onChange(itemValue);
-		},
-		[itemValue, context.onChange]
-	);
+		const handleClick = React.useCallback(
+			(e: React.MouseEvent<HTMLButtonElement>) => {
+				console.log({ itemValue });
+				onClick?.(e);
+				context.onChange(itemValue);
+			},
+			[itemValue, context.onChange]
+		);
 
-	const itemStyles: SystemStyleObject = {
-		opacity: isDisabled || !isSelected ? 0.4 : 1,
-		...styles.item,
-	};
+		const itemStyles: SystemStyleObject = {
+			opacity: isDisabled || !isSelected ? 0.4 : 1,
+			...styles.item,
+		};
 
-	const ctx = React.useMemo(() => ({ isDisabled, isSelected }), [isDisabled, isSelected]);
+		const ctx = React.useMemo(() => ({ isDisabled, isSelected }), [isDisabled, isSelected]);
 
-	return (
-		<BottomNavigationItemProvider value={ctx}>
-			<chakra.button
-				ref={mergeRefs(register, ref)}
-				className={cx('chakra-bottom-navigation__item', props.className)}
-				__css={itemStyles}
-				{...props}
-				onClick={handleClick}
-			/>
-		</BottomNavigationItemProvider>
-	);
-});
+		return (
+			<BottomNavigationItemProvider value={ctx}>
+				<chakra.button
+					ref={mergeRefs(register, ref)}
+					className={cx('chakra-bottom-navigation__item', props.className)}
+					__css={itemStyles}
+					aria-selected={ariaAttr(isSelected)}
+					onClick={handleClick}
+					{...props}
+				/>
+			</BottomNavigationItemProvider>
+		);
+	}
+);
 
 if (__DEV__) {
 	BottomNavigationItem.displayName = 'BottomNavigationItem';

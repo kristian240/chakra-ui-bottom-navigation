@@ -16,9 +16,10 @@ const baseStyle = {
 	item: {
 		flex: 1,
 		mx: 4,
+		opacity: 0.4,
 
-		_hidden: {
-			opacity: 0.4,
+		_selected: {
+			opacity: 1,
 		},
 	},
 };
