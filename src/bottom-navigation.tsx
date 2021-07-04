@@ -68,7 +68,7 @@ BottomNavigation.defaultProps = {
 
 interface IBottomNavigationItemProps extends HTMLChakraProps<'button'> {}
 
-export const BottomNavigationItem = forwardRef<IBottomNavigationItemProps, 'button'>((props, ref) => {
+export const BottomNavigationItem = forwardRef<IBottomNavigationItemProps, 'button'>(({ value, ...props }, ref) => {
 	const isDisabled = props.disabled || false;
 
 	const styles = useStyles();
@@ -79,7 +79,7 @@ export const BottomNavigationItem = forwardRef<IBottomNavigationItemProps, 'butt
 		disabled: isDisabled,
 	});
 
-	const isSelected = index === context.value;
+	const isSelected = (value || index) === context.value;
 
 	const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
 		props.onClick?.(e);
