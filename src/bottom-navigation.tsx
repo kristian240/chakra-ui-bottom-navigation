@@ -85,10 +85,13 @@ export const BottomNavigationItem = forwardRef<IBottomNavigationItemProps, 'butt
 
 	const isSelected = itemValue === context.value;
 
-	const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-		props.onClick?.(e);
-		context.onChange(itemValue);
-	};
+	const handleClick = React.useCallback(
+		(e: React.MouseEvent<HTMLButtonElement>) => {
+			props.onClick?.(e);
+			context.onChange(itemValue);
+		},
+		[itemValue, context.onChange]
+	);
 
 	const itemStyles: SystemStyleObject = {
 		opacity: isDisabled || !isSelected ? 0.4 : 1,
