@@ -22,6 +22,14 @@ const baseStyle = {
 			opacity: 1,
 		},
 	},
+	label: {
+		_hidden: {
+			opacity: 0,
+			height: 0,
+			width: 0,
+			overflow: 'hidden',
+		},
+	},
 };
 
 function variantFlat(props: Dict) {
