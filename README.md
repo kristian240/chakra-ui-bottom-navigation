@@ -49,11 +49,11 @@ export const App = () => {
 If you want to expand defualt styles of the component, use the `withDefaultStyles` HOC. Component override follows the same structure as all other Chakra-UI components. [Check the guide here.](https://chakra-ui.com/docs/theming/component-style#styling-multipart-components)
 
 ```jsx
-import { withDefaultStyles } from 'chakra-ui-bottom-navigation`;
+import { withDefaultStyles } from 'chakra-ui-bottom-navigation';
 
 const bottomNavigationOverries = {
   // ... component's override
-}
+};
 
 const MyBottomNavigation = withDefaultStyles(bottomNavigationOverries);
 
@@ -103,12 +103,15 @@ export const BasicExample = () => {
 ### Bottom navigation as app navigation
 
 ```jsx
-export const BasicExample = () => {
+export const NavigationExample = () => {
   const router = useRouter();
 
-  const handleChange = useCallback((path) => {
-    router.push(path);
-  });
+  const handleChange = useCallback(
+    (path) => {
+      router.push(path);
+    },
+    [router.push]
+  );
 
   return (
     <BottomNavigation value={router.pathname} onChange={handleChange}>
