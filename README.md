@@ -134,12 +134,33 @@ export const NavigationExample = () => {
 };
 ```
 
-<!-- ## Props
+## Props
 
 ### BottomNavigation props
 
 BottomNavigation composes `Box` so you call pass all `Box` related props.
 
-| Prop name   | Values                      | Default value | Description |
-| ----------- | --------------------------- | ------------- | ----------- |
-| colorScheme | default chakra colorSchemes | "blue"        |             | -->
+| Prop name     | Description                                   | Default value | Values                                                 |
+| ------------- | --------------------------------------------- | ------------- | ------------------------------------------------------ |
+| `colorScheme` |                                               | `blue`        | all default chakra-ui `colorSchemes` (can be extended) |
+| `onChange`    | function that is called when item is selected |               |                                                        |
+| `showLabel`   | determines when label should be visible       | `always`      | `'never' \| 'if-active' \| 'always'`                   |
+| `value`       | active value of bottom navigation             |               |                                                        |
+
+### BottomNavigationItem props
+
+BottomNavigationItem composes `Button` so you call pass all `Button` related props.
+
+| Prop name | Description                                     | Default value                                 | Values |
+| --------- | ----------------------------------------------- | --------------------------------------------- | ------ |
+| `value`   | Value that will be passed to `onChange` handler | by default, value is set to index of the item |        |
+
+### BottomNavigationIcon props
+
+BottomNavigationItem composes `Icon` so you call pass all `Icon` related props.
+
+### BottomNavigationLabel props
+
+BottomNavigationItem composes `Box` so you call pass all `Box` related props.
+
+Every `BottomNavigationItem` should have `BottomNavigationLabel` so assistive technologies can label the element. If label is now show (inactive when `showLabel: 'if-active'` or when `showLabel: `'never'`), the label is only hidden from the screen but it is still rendered in the DOM.
