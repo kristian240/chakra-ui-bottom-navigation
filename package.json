@@ -1,6 +1,6 @@
 {
 	"name": "chakra-ui-bottom-navigation",
-	"version": "2.0.0-beta",
+	"version": "2.0.1",
 	"description": "Bottom navigation component built for chakra",
 	"main": "dist/index.js",
 	"typings": "dist/index.d.ts",
