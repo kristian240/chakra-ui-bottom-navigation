@@ -1,19 +1,18 @@
 import {
 	As,
 	chakra,
+	createStylesContext,
 	forwardRef,
 	HTMLChakraProps,
 	Icon,
 	IconProps,
 	omitThemingProps,
-	StylesProvider,
 	SystemStyleObject,
 	ThemingProps,
 	useMultiStyleConfig,
-	useStyles,
 } from '@chakra-ui/react';
-import { ariaAttr, dataAttr, cx, __DEV__ } from '@chakra-ui/utils';
 import { mergeRefs } from '@chakra-ui/react-utils';
+import { ariaAttr, cx, dataAttr, __DEV__ } from '@chakra-ui/utils';
 import React from 'react';
 
 import {
@@ -26,6 +25,8 @@ import {
 	useBottomNavigationDescendants,
 	useBottomNavigationItemContext,
 } from './use-bottom-navigation';
+
+const [StylesProvider, useStyles] = createStylesContext('BottomNavigation');
 
 export interface IBottomNavigationProps
 	extends Omit<HTMLChakraProps<'nav'>, 'onChange'>,
